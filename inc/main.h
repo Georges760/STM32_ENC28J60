@@ -39,6 +39,41 @@
 
 /* Private defines */
 
+/************************* GPIO *************************/
+#define ETH_NSS_GPIO_CLK_ENABLE()		__HAL_RCC_GPIOC_CLK_ENABLE()
+#define ETH_NSS_GPIO_PORT				GPIOC
+#define ETH_NSS_GPIO_PIN					GPIO_PIN_5
+#define ETH_NSS_SELECT()					HAL_GPIO_WritePin(ETH_NSS_GPIO_PORT, ETH_NSS_GPIO_PIN, GPIO_PIN_RESET)
+#define ETH_NSS_RELEASE()				HAL_GPIO_WritePin(ETH_NSS_GPIO_PORT, ETH_NSS_GPIO_PIN, GPIO_PIN_SET)
+
+#define ETH_RST_GPIO_CLK_ENABLE()		__HAL_RCC_GPIOC_CLK_ENABLE()
+#define ETH_RST_GPIO_PORT				GPIOC
+#define ETH_RST_GPIO_PIN					GPIO_PIN_6
+#define ETH_RST_OFF()					HAL_GPIO_WritePin(ETH_RST_GPIO_PORT, ETH_RST_GPIO_PIN, GPIO_PIN_RESET)
+#define ETH_RST_ON()						HAL_GPIO_WritePin(ETH_RST_GPIO_PORT, ETH_RST_GPIO_PIN, GPIO_PIN_SET)
+
+/************************* SPI *************************/
+#define SPIx                             SPI2
+#define SPIx_CLK_ENABLE()                __HAL_RCC_SPI2_CLK_ENABLE()
+
+#define SPIx_FORCE_RESET()               __HAL_RCC_SPI2_FORCE_RESET()
+#define SPIx_RELEASE_RESET()             __HAL_RCC_SPI2_RELEASE_RESET()
+
+#define SPIx_SCK_GPIO_CLK_ENABLE()       __HAL_RCC_GPIOB_CLK_ENABLE()
+#define SPIx_SCK_GPIO_PIN                GPIO_PIN_10
+#define SPIx_SCK_GPIO_PORT               GPIOB
+#define SPIx_SCK_GPIO_AF                 GPIO_AF5_SPI2
+
+#define SPIx_MOSI_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOC_CLK_ENABLE()
+#define SPIx_MOSI_GPIO_PIN               GPIO_PIN_1
+#define SPIx_MOSI_GPIO_PORT              GPIOC
+#define SPIx_MOSI_GPIO_AF                GPIO_AF7_SPI2
+
+#define SPIx_MISO_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOC_CLK_ENABLE()
+#define SPIx_MISO_GPIO_PIN               GPIO_PIN_2
+#define SPIx_MISO_GPIO_PORT              GPIOC
+#define SPIx_MISO_GPIO_AF                GPIO_AF5_SPI2
+
 /**
  * @}
  */
