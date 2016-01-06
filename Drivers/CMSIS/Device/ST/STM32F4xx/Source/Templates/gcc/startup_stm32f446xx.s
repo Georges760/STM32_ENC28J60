@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file      startup_stm32f446xx.s
   * @author    MCD Application Team
-  * @version   V2.2.0RC4
-  * @date      12-December-2014
-  * @brief     STM32F446xx Devices vector table for Atollic TrueSTUDIO toolchain. 
+  * @version   V2.4.2
+  * @date      13-November-2015
+  * @brief     STM32F446xx Devices vector table for GCC based toolchains. 
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -16,7 +16,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -242,17 +242,17 @@ g_pfnVectors:
   .word     0                                 /* Reserved                     */                   
   .word     0                                 /* Reserved                     */
   .word     FPU_IRQHandler                    /* FPU                          */
-  .word     0                                 /* Reserved                     */      
+  .word     0                                 /* Reserved                     */
   .word     0                                 /* Reserved                     */
   .word     SPI4_IRQHandler                   /* SPI4                         */
-  .word     0                                 /* Reserved 					          */
-  .word     0                                 /* Reserved					            */
-  .word     SAI1_IRQHandler                   /* SAI1						              */
-  .word     0                                 /* Reserved					            */
-  .word     0                                 /* Reserved					            */
-  .word     0                                 /* Reserved    				          */
+  .word     0                                 /* Reserved                     */
+  .word     0                                 /* Reserved                     */
+  .word     SAI1_IRQHandler                   /* SAI1                         */
+  .word     0                                 /* Reserved                     */
+  .word     0                                 /* Reserved                     */
+  .word     0                                 /* Reserved                     */
   .word     SAI2_IRQHandler                   /* SAI2                         */
-  .word     QuadSPI_IRQHandler                /* QuadSPI                      */
+  .word     QUADSPI_IRQHandler                /* QuadSPI                      */
   .word     CEC_IRQHandler                    /* CEC                          */
   .word     SPDIF_RX_IRQHandler               /* SPDIF RX                     */
   .word     FMPI2C1_Event_IRQHandler          /* FMPI2C 1 Event               */
@@ -535,8 +535,8 @@ g_pfnVectors:
    .weak      SAI2_IRQHandler            
    .thumb_set SAI2_IRQHandler,Default_Handler
    
-   .weak      QuadSPI_IRQHandler            
-   .thumb_set QuadSPI_IRQHandler,Default_Handler
+   .weak      QUADSPI_IRQHandler            
+   .thumb_set QUADSPI_IRQHandler,Default_Handler
  
    .weak      CEC_IRQHandler            
    .thumb_set CEC_IRQHandler,Default_Handler
@@ -550,5 +550,5 @@ g_pfnVectors:
    .weak      FMPI2C1_Error_IRQHandler            
    .thumb_set FMPI2C1_Error_IRQHandler,Default_Handler 
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/		
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/        
  

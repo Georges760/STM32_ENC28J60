@@ -36,6 +36,7 @@
 									<listOptionValue builtIn="false" value="..\Drivers\CMSIS\Include"/>
 									<listOptionValue builtIn="false" value="..\Drivers\CMSIS\Device\ST\STM32F4xx\Include"/>
 									<listOptionValue builtIn="false" value="..\Drivers\STM32F4xx_HAL_Driver\Inc"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 								</option>
 								<option id="com.atollic.truestudio.common_options.target.endianess.345124346" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1994240540" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F446RE" valueType="enumerated"/>
